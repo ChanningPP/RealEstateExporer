@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewpoint" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	<link rel="icon" href="image/koala.png">
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Our css modification -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/monopoly.css" rel="stylesheet">
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+	<!-- Facebook API -->
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId: '348402378955374',
+				autoLogAppEvents: true,
+				xfbml: true,
+				version: 'v2.10'
+			});
+			FB.AppEvents.logPageView();
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+</head>
+
+<body>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">Real Estate Explorer</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="guide.html">GUIDE</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li class="game-button"><a href="monopoly.html">GAME</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">SHARE
+					<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<!-- Facebook Share -->
+							<li id="facebook"><a href="">Facebook</a></li>
+							<!-- Twitter Share -->
+							<li><a href="http://twitter.com/share?text=Check out this website!&url=https://deco1800-p1c.uqcloud.net/">Twitter</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Records -->
+	<div class="list">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-search btn-default dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-search"></span>
+										<span class="label-icon">Search</span>
+										<span class="caret"></span>
+									</button>
+								<!-- select duration -->
+								<ul class="dropdown-menu" role="menu">
+									<li><a id="duration1" href="#">1865 - 1875</a></li>
+									<li><a id="duration2" href="#">1876 - 1886</a></li>
+									<li><a id="duration3" href="#">1887 - 1897</a></li>
+									<li><a id="duration4" href="#">1898 - 1908</a></li>
+									<li><a id="duration5" href="#">1909 - 1925</a></li>
+								</ul>
+							</div>
+							<!--Enter the year -->
+							<input id="listInput" type="text" class="form-control" placeholder="Search by year, from 1865 to 1925">
+							<!-- Search Button -->
+							<div class="input-group-btn">
+								<div class="btn-group">
+									<input id="listSearch" type="button" value="Search" class="btn btn-danger">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+		<!-- Map and list tabs -->
+		<div class="container">
+			<div class="row">
+				<div class="span6">
+					<ul class="nav nav-tabs">
+						<li><a href="index.html"><i class="glyphicon glyphicon-map-marker"></i>&nbsp Map</a></li>
+						<li><a href="list.html"><i class="glyphicon glyphicon-list"></i>&nbsp List</a></li>
+						<li class="reset-property"><a href="#" style="color:white !important;">Add property again!</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<!-- Records -->
+		<div class="container">
+			<div class="row">
+				<div id="records"></div>
+			</div>
+		</div>
+
+
+		<div class="popup-lightbox" style="display:none;">
+			<div class="middle-center popup" style="border-color: #ff4d4d;">
+				<!-- Pop to give a hint to users about they can choose 12 properties for monopoly game -->
+				<div id="addProperty" class="popup-page" style="display:none;">
+					<div class="popup-content">You need to add 6 properties for Monopoly Game on List page!
+						<br><button class="clickable" style="background-color: #ff4d4d;">Get it!</button><br></div>
+				</div>
+
+				<div id="enoughProperty" class="popup-page" style="display:none;">
+					<div class="popup-content">Welcome to play Monopoly game on Brisbane map!
+						<br><button class="clickable" style="background-color: #ff4d4d;">Cool!</button><br></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Facebook Share-->
+	<script>
+		window.onload = function() {
+			document.getElementById('facebook').onclick = function() {
+				FB.ui({
+					method: 'share',
+					display: 'popup',
+					href: 'https://deco1800-p1c.uqcloud.net/',
+					hashtag: '#Studio1',
+					quote: 'I just found an awesome website!',
+				}, function(response) {});
+			}
+		};
+	</script>
+
+</body>
+
+</html>

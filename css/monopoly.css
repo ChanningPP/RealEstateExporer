@@ -1,0 +1,290 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 0;
+}
+
+.game-body{
+    position:fixed;
+    margin-top:50px;
+    overflow-y: scroll;
+}
+
+.left-part {
+    background: url("../image/background.jpg") no-repeat left top;
+    background-size: contain;
+    width: 1000px;
+    height: 750px;
+}
+
+.point {
+    position: absolute;
+    z-index: 99;
+}
+
+.path {
+}
+
+.house {
+    width: 50px;
+    height: 50px;
+    background: url("../image/empty_house.png");
+    transform: translate(-50%, -50%);
+    /*margin-top: -25px;
+    margin-left: -25px;*/
+}
+
+.chance {
+    width: 35px;
+    height: 35px;
+    background: url("../image/chance.png");
+    transform: translate(-50%, -50%);
+}
+
+.start {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    z-index: 99;
+    background: url("../image/start.png") no-repeat left top;
+    background-size: contain;
+}
+
+.go-to-jail{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url("../image/go_to_jail.png");
+    transform: translate(-50%, -50%);
+}
+
+.in-jail{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url("../image/in_jail.png");
+    transform: translate(-50%, -50%);
+}
+
+#player-money-1, #player-money-2 {
+    position: absolute;
+    display: inline-block;
+    width: 400px;
+    height: 100px;
+    z-index: 9999999;
+    font-size: 20px;
+    font-weight: bold;
+    top: 20px;
+}
+
+#player-money-1 {
+    left: 150px;
+    top:60px;
+}
+
+#player-money-2 {
+    left: 690px;
+    top:60px;
+}
+
+.player1.point {
+    width: 50px;
+    height: 50px;
+    background: url("../image/kangaroo_house.png");
+    transform: translate(-50%, -50%);
+}
+
+.player2.point {
+    width: 50px;
+    height: 50px;
+    background: url("../image/koala_house.png");
+    transform: translate(-50%, -50%);
+}
+
+.right-part {
+    width: 250px;
+    height: 750px;
+    margin-left: 1010px;
+    margin-top: -750px;;
+    padding-left: auto;
+    padding-right: auto;
+    /*display: inline-block;*/
+}
+
+#dice {
+    text-align: center;
+}
+
+#dice button {
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 10px #666666;
+    -moz-box-shadow: 0px 1px 10px #666666;
+    box-shadow: 0px 1px 10px #666666;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #d93434;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#dice button:hover {
+    background: #ff2929;
+    text-decoration: none;
+}
+
+#dice div:first-child {
+    text-align: center;
+}
+
+#dice-result {
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+}
+
+#profile {
+    border: solid 3px black;
+    background: white;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+}
+
+#profile .record {
+    border: 2px solid white;
+    padding: 1em;
+}
+
+/*
+.support {
+    background: url("../image/support.jpg") no-repeat left top;
+    background-size: contain;
+    width: 100%;
+    height: 100px;
+}*/
+
+.clickable {
+    cursor: pointer;
+}
+
+.middle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.popup-lightbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+    font-size: 25px;
+    font-family: Arial;
+}
+
+.popup {
+    background-color: white;
+    width: 40%;
+    height: 30%;
+    border: solid 3px blueviolet;
+}
+
+.popup .popup-title {
+    background-color: white;
+    padding: 10px;
+    color: black;
+}
+
+.popup .popup-content {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.popup button {
+    background-color: blueviolet;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 4px;
+    margin: 5px;
+    color: white;
+}
+
+.popup input {
+    padding: 5px;
+    border: 1px solid #CCC;
+    outline: none;
+}
+
+.invalid-error {
+    color: red;
+    opacity: 0;
+}
+
+.players-placeholer {
+    width: 100%;
+    height: 100%;
+}
+
+#player1 {
+    background: url("../image/kangaroo.png")no-repeat left top;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    /*margin-top: -25px;
+    margin-left: -25px;*/
+}
+
+#player2 {
+    background: url("../image/koala.png")no-repeat left top;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    /*margin-top: -25px;
+    margin-left: -25px;*/
+}
+
+/*navbar*/
+header{
+	position: fixed;
+    width: 100%;
+    height: 15%;
+    margin: auto;
+    z-index: 1;
+    border: 0;
+    margin: 0;
+    padding: 0
+}
+
+.navbar {
+      font-family: helvetica, sans-serif;
+      background-color: #ff4d4d;
+
+      font-size: 14px !important;
+      letter-spacing: 1px;
+      opacity: 0.9;
+	  border: 0;
+	  text-align: center;
+}
+
+
+.navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+
+.navbar-nav > li > a:hover {
+      color: #e8ced0 !important;
+}

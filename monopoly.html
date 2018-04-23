@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BNE-Monopoly1900</title>
+    <!-- jQuery -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="js/monopoly.js"></script>
+    <script src="js/point.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+
+	<link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/monopoly.css">
+    <link rel="icon" href="image/path.png">
+
+    <!-- Facebook API -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '348402378955374',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.10'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Real Estate Explorer</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="guide.html">GUIDE</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="monopoly.html">GAME</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">SHARE
+                        <span class="caret"></span>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <!-- Facebook Share -->
+                                <li id="facebook"><a href="">Facebook</a></li>
+                                <!-- Twitter Share -->
+                                <li><a href="http://twitter.com/share?text=Check out this website!&url=https://deco1800-p1c.uqcloud.net/">Twitter</a></li>
+                            </ul>
+                        </li>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="game-body">
+        <div class="left-part">
+            <div id="player-money-1">
+                <p><span>20</span>M</p>
+            </div>
+            <div id="player-money-2">
+                <p><span>20</span>M</p>
+            </div>
+            <svg style="height:100%;width:100%;">
+                    <polyline class="classes" id="name" points="
+        	        300,250
+        	        250,300
+                    300,370
+                    350,320
+                    400,320
+                    450,300
+                    420,350
+                    350,400
+                    400,450
+                    450,450
+
+                    470,450
+                    500,400
+                    550,470
+                    600,450
+                    620,370
+                    670,400
+                    600,500
+                    650,550
+                    700,500
+                    750,520
+
+
+                    820,500
+                    800,450
+                    750,400
+                    700,300
+                    650,250
+                    550,300
+                    570,400
+                    500,300
+                    550,200
+                    400,200
+
+                    300,250
+
+                    "
+                    style="fill:none;stroke:red;stroke-width:3"/>
+                </svg>
+        </div>
+
+
+
+        <div id="1" style="left:100px;top:200px;" class="start point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+
+        <div id="2" style="left:250px;top:300px;" class="house point available" house="0" group="group1">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="3" style="left:300px;top:370px;" class="house point available" house="1" group="group1">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="4" style="left:350px;top:320px;" class="chance point">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="5" style="left:400px;top:320px;" class="chance point">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="6" style="left:450px;top:300px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="7" style="left:420px;top:350px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="8" style="left:350px;top:400px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="9" style="left:400px;top:450px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="10" style="left:450px;top:450px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+
+
+        <div id="11" style="left:470px;top:450px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+
+        <div id="12" style="left:500px;top:400px;" class="house point available" house="2" group="group2">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="13" style="left:550px;top:470px;" class="house point available" house="3" group="group2">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="14" style="left:600px;top:450px;" class="chance point">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="15" style="left:620px;top:370px;" class="chance point">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+
+        <div id="16" style="left:670px;top:400px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="17" style="left:600px;top:500px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="18" style="left:650px;top:550px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="19" style="left:700px;top:500px;" class="path point in-jail">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="20" style="left:750px;top:520px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+
+
+        <div id="21" style="left:820px;top:500px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="22" style="left:800px;top:450px;" class="house point available" house="4" group="group3">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="23" style="left:750px;top:400px;" class="house point available" house="5" group="group3">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="24" style="left:700px;top:300px;" class="chance point">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="25" style="left:650px;top:250px;" class="chance point">
+            <div class="content" style="margin-top:25px;margin-left:25px;"></div>
+            <div class="title"></div>
+        </div>
+        <div id="26" style="left:550px;top:300px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="27" style="left:570px;top:400px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="28" style="left:500px;top:300px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="29" style="left:550px;top:200px;" class="path point go-to-jail">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+        <div id="30" style="left:400px;top:200px;" class="path point">
+            <div class="content"></div>
+            <div class="title"></div>
+        </div>
+
+        <!-- change -->
+
+        <!--Right screen-->
+        <div class="right-part">
+            <!--Roll dice-->
+            <div id="dice">
+                <button>Throw Dices</button>
+                <div id="dice-result">Move steps:
+                    <span>0</span>
+                </div>
+            </div>
+
+            <!--Offer property perofile image-->
+            <div id="profile"></div>
+        </div>
+
+        <div class="popup-lightbox" style="display:none;">
+            <div class="middle-center popup">
+                <!-- Welcome to play this game -->
+                <div id="intro" class="popup-page" style="display:none;">
+                    <div class="popup-title">Let's play Monopoly!</div>
+                    <button id="play" class="clickable">Play!</button><br>
+                </div>
+                <!-- Remind the player to roll a dice and play this turn -->
+                <!-- <div id="playersTurn" class="popup-page" style="display:none;">
+                    <div class="popup-title">This is <span id="player-turn"></span>'s turn!</div>
+                    <button id="play" class="clickable">Go!</button><br>
+                </div> -->
+
+                <!-- Buy property popup -->
+                <div id="buy" class="popup-page" style="display:none;">
+                    <div class="popup-title">This place is available for sale!</div>
+                    <div class="popup-content">Do you want to buy it for $<span class="point-price"></span>M ?<br/>
+                        <button id="yes" class="clickable">YES</button>
+                        <button id="no" class="clickable">NO</button><br>
+                        <div class="invalid-error">You don't have enough money...</div>
+                    </div>
+                </div>
+
+                <!-- Pay rent popup -->
+                <div id="pay" class="popup-page" style="display:none;">
+                    <div class="popup-title">Pay up</div>
+                    <div class="popup-content">This property belongs to <span id="player-placeholder"></span><br> You should pay <span id="amount-placeholder"></span><br />
+                        <button class="clickable">:(</button>
+                    </div>
+                </div>
+
+                <!-- Chance card popup -->
+                <div id="chance" class="popup-page" style="display:none;">
+                    <div class="popup-title"></div>
+                    <div class="popup-content">
+                        <div id="text-placeholder"></div>
+                        <button class="clickable">OK</button>
+                    </div>
+                </div>
+
+                <!-- Jail popup -->
+                <div id="jail" class="popup-page" style="display:none;">
+                    <div class="popup-title">Go to Jail!</div>
+                    <div class="popup-content">You miss 3 turns<br />
+                        <button class="clickable">oops</button>
+                    </div>
+                </div>
+
+                <div id="end" class="popup-page" style="display:none;">
+                    <div class="popup-title"><span id="player-win"></span> wins!</div>
+                    <button id="replay" class="clickable">Play again!</button><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Facebook Share-->
+    <script>
+        window.onload = function() {
+            document.getElementById('facebook').onclick = function() {
+                FB.ui({
+                    method: 'share',
+                    display: 'popup',
+                    href: 'https://deco1800-p1c.uqcloud.net/',
+                    hashtag: '#Studio1',
+                    quote: 'I just found an awesome website!',
+                }, function(response) {});
+            }
+        };
+    </script>
+
+</body>
+
+</html>
